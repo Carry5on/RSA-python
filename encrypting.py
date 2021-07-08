@@ -4,8 +4,8 @@ import math
 
 chars = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
-#function which checks if two numbers are relatively prime
-def nwd(x, y):
+#function determines the greatest common divisor of two given numbers
+def gcd(x, y):
     while x > 0 and y > 0:
         if x > y:
             x = x % y
@@ -41,7 +41,7 @@ q = int(input("enter private key q="))
 #public key
 r = p*q
 s = int(input("enter public key s="))
-while nwd(s,p-1) != 1 and nwd(s,q-1) != 1:
+while gcd(s,p-1) != 1 and gcd(s,q-1) != 1:
     s = int(input("enter public key s="))
 
 
